@@ -3,9 +3,9 @@ Autoconnect MSR-100 Magnetic Stripe Card Reader Throught RS232 Port and returns 
 
 This Reader:
 
-![Reader Device](/docs/msr1100A.jpg "Reader Device")
+![Reader Device](/docs/msr100A.jpg "Reader Device")
 
-![Reader Device](/docs/msr1100B.jpg "Reader Device")
+![Reader Device](/docs/msr100B.jpg "Reader Device")
 
 ## Info
 

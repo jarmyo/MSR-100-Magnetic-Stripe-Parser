@@ -12,10 +12,6 @@ This Reader:
 https://en.wikipedia.org/wiki/ISO/IEC_7813
 
 
-
-
-
-
 ## How to use
 
 ```
@@ -25,7 +21,6 @@ static void Main(string[] args)
         {
                 controller.OnCardSwiped += Controller_OnCardSwiped;
                 Console.WriteLine("Press any key to continue...");
-                Console.WriteLine();
                 Console.ReadKey();
         }
 }

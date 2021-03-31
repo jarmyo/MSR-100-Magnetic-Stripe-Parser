@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>MSR_100_Magnetic_Stripe_Parser</RootNamespace>
+    <Authors>Julian Augusto Ruiz Martinez</Authors>
+    <Company>Repos Software</Company>
+    <PackageProjectUrl>https://github.com/jarmyo/MSR-100-Magnetic-Stripe-Parser/</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/jarmyo/MSR-100-Magnetic-Stripe-Parser/</RepositoryUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.IO.Ports" Version="5.0.1" />
+  </ItemGroup>
+
+</Project>

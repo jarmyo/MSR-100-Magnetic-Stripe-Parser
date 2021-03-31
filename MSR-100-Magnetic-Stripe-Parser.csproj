@@ -2,11 +2,14 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <PackageId>MSR-100-Magnetic-Stripe-Parser</PackageId>
+    <Version>1.0.0</Version>
     <RootNamespace>MSR_100_Magnetic_Stripe_Parser</RootNamespace>
     <Authors>Julian Augusto Ruiz Martinez</Authors>
     <Company>Repos Software</Company>
     <PackageProjectUrl>https://github.com/jarmyo/MSR-100-Magnetic-Stripe-Parser/</PackageProjectUrl>
     <RepositoryUrl>https://github.com/jarmyo/MSR-100-Magnetic-Stripe-Parser/</RepositoryUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>

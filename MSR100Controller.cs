@@ -6,17 +6,16 @@ namespace Repos.MSR100Controller
 {
     public delegate void CardHandler(MagneticCardInfo cardinfo);
     public class MSR100Controller : IDisposable
-    {
-        //https://en.wikipedia.org/wiki/Magnetic_stripe_card        
+    {          
         public MSR100Controller(string PortName = "COM1", int baudRate = 9600)
         {
             _SerialPort = new SerialPort(PortName, baudRate);
-            _SerialPort.DataReceived += _DataRecived;
+            _SerialPort.DataReceived += DataRecived;
             _SerialPort.Open();
         }
         private SerialPort _SerialPort;
         public event CardHandler OnCardSwiped;
-        void _DataRecived(object sender, SerialDataReceivedEventArgs e)
+        void DataRecived(object sender, SerialDataReceivedEventArgs e)
         {
             var sp = (SerialPort)sender;
             var data = sp.ReadLine();
@@ -27,8 +26,10 @@ namespace Repos.MSR100Controller
         public static MagneticCardInfo ParseData(string data)
         {
             data = data.Replace("\r", null);
-            var cardinfo = new MagneticCardInfo();
-            cardinfo.Raw = data;
+            var cardinfo = new MagneticCardInfo
+            {
+                Raw = data
+            };
 
             var tracks = data.Split('?'); //split end sentinel
 
@@ -74,6 +75,7 @@ namespace Repos.MSR100Controller
 
         public void Dispose()
         {
+            GC.SuppressFinalize(this);
             _SerialPort.Close();
         }
     }

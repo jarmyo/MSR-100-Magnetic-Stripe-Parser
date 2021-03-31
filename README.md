@@ -1,10 +1,14 @@
 # MSR-100-Magnetic-Stripe-Parser
-Autoconnect MSR-100 Magnetic Stripe Card Reader and returns CardInfo on Swipe event.
+Autoconnect MSR-100 Magnetic Stripe Card Reader Throught RS232 Port and returns CardInfo data on Swipe event.
+
+
+## Info
 
 https://en.wikipedia.org/wiki/ISO/IEC_7813
 
 
-# How to use
+
+## How to use
 
 ```
         static void Main(string[] args)
@@ -29,3 +33,7 @@ https://en.wikipedia.org/wiki/ISO/IEC_7813
         }
         
 ```
+
+## Contribution
+
+All contribution is welcome

@@ -4,7 +4,7 @@ namespace Repos.MSR100Controller
 {
     public class Track01Info : ITRack
     {
-        public char FormarCode { get; set; }
+        public char FormatCode { get; set; }
         public string LastName { get; set; }
         public string FirstName { get; set; }
         public string Name { get; set; }

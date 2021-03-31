@@ -1,6 +1,9 @@
 # MSR-100-Magnetic-Stripe-Parser
 Autoconnect MSR-100 Magnetic Stripe Card Reader and returns CardInfo on Swipe event.
 
+https://en.wikipedia.org/wiki/ISO/IEC_7813
+
+
 # How to use
 
 ```

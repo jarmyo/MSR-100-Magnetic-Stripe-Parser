@@ -1,20 +1,30 @@
 # MSR-100-Magnetic-Stripe-Parser
+
 Autoconnect MSR-100 Magnetic Stripe Card Reader Throught RS232 Port and returns MagneticCardInfo class with data on Swipe event.
 
 This Reader:
 
 ![Reader Device](/docs/msr100A.jpg "Reader Device")
-
 ![Reader Device](/docs/msr100B.jpg "Reader Device")
 
-## Info
+## ISO 7813 For financial transaction cards
 
-https://en.wikipedia.org/wiki/ISO/IEC_7813
+https://en.wikipedia.org/wiki/ISO/IEC_7811
 
+# How to use
 
-## How to use
+Constructor has two parameters:
 
-```
+- `PortName` is a **optional** string parameter that will override the port name, default is COM1
+- `baudRate` is a **optional** integer parameter that will override the baud rate, default is 9600 
+
+Class has one public event:
+
+- ` OnCardSwiped` is event that will fire every time a card is swiped on the device, return an object of type `MagneticCardInfo`
+
+#Use Example
+
+```csharp
 static void Main(string[] args)
 {
         using (var controller = new MSR100Controller())
@@ -36,6 +46,8 @@ private static void Controller_OnCardSwiped(MagneticCardInfo cardinfo)
 }        
 ```
 
-## Contribution
+# Contributing
 
-All contribution is welcome, Can somebody helpme with autocreate a nuget package?
+- **Bug Reporting**: You can contribute opening [issues](https://github.com/jarmyo/MSR-100-Magnetic-Stripe-Parser/issues).
+- **Bug Fixing**: Fix it and help others and write some [tests](https://github.com/jarmyo/MSR-100-Magnetic-Stripe-Parser/tree/main/MSR-100-Magnetic-Stripe-ParserTests) to make sure that everything are working propertly.
+- **Improving**: Open an [issue](https://github.com/jarmyo/MSR-100-Magnetic-Stripe-Parser/issues) and lets discuss it.

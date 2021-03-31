@@ -20,11 +20,11 @@ namespace Repos.MSR100Controller
         {
             var sp = (SerialPort)sender;
             var data = sp.ReadLine();
-            var cardinfo = GetData(data);
+            var cardinfo = ParseData(data);
             OnCardSwiped?.Invoke(cardinfo);
         }
 
-        public static MagneticCardInfo GetData(string data)
+        public static MagneticCardInfo ParseData(string data)
         {
             data = data.Replace("\r", null);
             var cardinfo = new MagneticCardInfo();

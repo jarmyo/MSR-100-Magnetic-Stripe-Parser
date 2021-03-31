@@ -10,6 +10,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="MSR-100-Magnetic-Stripe-ParserTests\**" />
+    <EmbeddedResource Remove="MSR-100-Magnetic-Stripe-ParserTests\**" />
+    <None Remove="MSR-100-Magnetic-Stripe-ParserTests\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="MSR100ControllerTests.cs" />
+    <Compile Remove="UnitTest1.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="System.IO.Ports" Version="5.0.1" />
   </ItemGroup>
 

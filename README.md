@@ -6,6 +6,10 @@ Autoconnect MSR-100 Magnetic Stripe Card Reader Throught RS232 Port and returns 
 
 https://en.wikipedia.org/wiki/ISO/IEC_7813
 
+This Reader:
+https://www.adesso.com/product/msr-100-adesso-magnetic-stripe-card-reader/
+
+
 
 
 ## How to use

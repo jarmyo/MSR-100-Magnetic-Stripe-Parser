@@ -1,13 +1,17 @@
 # MSR-100-Magnetic-Stripe-Parser
-Autoconnect MSR-100 Magnetic Stripe Card Reader Throught RS232 Port and returns CardInfo data on Swipe event.
+Autoconnect MSR-100 Magnetic Stripe Card Reader Throught RS232 Port and returns MagneticCardInfo class with data on Swipe event.
 
+This Reader:
+
+![Reader Device](/docs/msr1100A.jpg "Reader Device")
+
+![Reader Device](/docs/msr1100B.jpg "Reader Device")
 
 ## Info
 
 https://en.wikipedia.org/wiki/ISO/IEC_7813
 
-This Reader:
-https://www.adesso.com/product/msr-100-adesso-magnetic-stripe-card-reader/
+
 
 
 

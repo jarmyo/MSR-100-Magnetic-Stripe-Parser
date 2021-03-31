@@ -5,7 +5,6 @@ Autoconnect MSR-100 Magnetic Stripe Card Reader Throught RS232 Port and returns 
 This Reader:
 
 ![Reader Device](/docs/msr100A.jpg "Reader Device")
-![Reader Device](/docs/msr100B.jpg "Reader Device")
 
 ## ISO 7813 For financial transaction cards
 
@@ -53,3 +52,5 @@ private static void Controller_OnCardSwiped(MagneticCardInfo cardinfo)
 - **Bug Reporting**: You can contribute opening [issues](https://github.com/jarmyo/MSR-100-Magnetic-Stripe-Parser/issues).
 - **Bug Fixing**: Fix it and help others and write some [tests](https://github.com/jarmyo/MSR-100-Magnetic-Stripe-Parser/tree/main/MSR-100-Magnetic-Stripe-ParserTests) to make sure that everything are working propertly.
 - **Improving**: Open an [issue](https://github.com/jarmyo/MSR-100-Magnetic-Stripe-Parser/issues) and lets discuss it.
+
+![Reader Device](/docs/msr100B.jpg "Reader Device")

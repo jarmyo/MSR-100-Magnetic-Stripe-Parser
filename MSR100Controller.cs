@@ -23,56 +23,60 @@ namespace Repos.MSR100Controller
             OnCardSwiped?.Invoke(cardinfo);
         }
 
+        private static void SetNameData(ref Track01Info cardinfoTrack1, string nameInfo)
+        {
+            cardinfoTrack1.Name = nameInfo;
+            var namesplit = cardinfoTrack1.Name.Split('/');
+
+            cardinfoTrack1.LastName = namesplit[0].Trim();
+            cardinfoTrack1.FirstName = string.Empty;
+            if (namesplit.Length > 1)
+                cardinfoTrack1.FirstName = namesplit[1].Trim();
+            cardinfoTrack1.Name = cardinfoTrack1.FirstName + " " + cardinfoTrack1.LastName;
+
+        }
+
+        private static DateTime ExpirationDate(string date)
+        {
+            var year = Convert.ToInt16(date.Substring(0, 2)) + 2000;
+            var month = Convert.ToInt16(date.Substring(2, 2));
+            return new DateTime(year, month, 1);
+        }
+
         private static void ParseTrack01(ref Track01Info cardinfoTrack1, string tracks0 )
         {
             cardinfoTrack1.Raw = tracks0;
             if (tracks0.Length <= 79)
             {
-                int year, month = 0;
-
                 var fieldsTrack01 = tracks0.Substring(2).Split('^');
                 cardinfoTrack1.FormatCode = tracks0[1];
                 cardinfoTrack1.PAN = fieldsTrack01[0];
 
-                cardinfoTrack1.Name = fieldsTrack01[1];
-                var namesplit = cardinfoTrack1.Name.Split('/');
-
-                cardinfoTrack1.LastName = namesplit[0].Trim();
-                cardinfoTrack1.FirstName = string.Empty;
-                if (namesplit.Length > 1)
-                    cardinfoTrack1.FirstName = namesplit[1].Trim();
-                cardinfoTrack1.Name = cardinfoTrack1.FirstName + " " + cardinfoTrack1.LastName;
+                SetNameData(ref cardinfoTrack1, fieldsTrack01[1]);
+                
+                int year, month;
+                cardinfoTrack1.ExpirationDate = new DateTime();
+                cardinfoTrack1.ServiceCode = null;
 
                 if (fieldsTrack01.Length == 3)
-                {
-                    year = Convert.ToInt16(fieldsTrack01[2].Substring(0, 2)) + 2000;
-                    month = Convert.ToInt16(fieldsTrack01[2].Substring(2, 2));
-                    cardinfoTrack1.ExpirationDate = new DateTime(year, month, 1);
+                {                    
+                    cardinfoTrack1.ExpirationDate = ExpirationDate(fieldsTrack01[2]);
                     cardinfoTrack1.ServiceCode = fieldsTrack01[2].Substring(4, 3);
                     cardinfoTrack1.DiscretionaryData = fieldsTrack01[2].Substring(7);
                 }
                 else
-                {
+                {                    
                     if (fieldsTrack01.Length == 4)
                     {
-                        if (fieldsTrack01[2].Length > 1) //has date
-                        {
-                            year = Convert.ToInt16(fieldsTrack01[2].Substring(0, 2)) + 2000;
-                            month = Convert.ToInt16(fieldsTrack01[2].Substring(2, 2));
-                            cardinfoTrack1.ExpirationDate = new DateTime(year, month, 1);
-                            cardinfoTrack1.ServiceCode = null;
-                        }
-                        else // has service code
-                        {
-                            cardinfoTrack1.ExpirationDate = new DateTime();
+                        if (fieldsTrack01[2].Length > 1) //has date                          
+                            cardinfoTrack1.ExpirationDate = ExpirationDate(fieldsTrack01[2]); 
+                        else // has service code                      
                             cardinfoTrack1.ServiceCode = fieldsTrack01[3]; ;
-                        }
+                        
                         cardinfoTrack1.DiscretionaryData = fieldsTrack01[3];
                     }
                     else if (fieldsTrack01.Length == 5)
-                    {
-                        cardinfoTrack1.ExpirationDate = new DateTime();
-                        cardinfoTrack1.ServiceCode = null;
+                    {                        
                         cardinfoTrack1.DiscretionaryData = fieldsTrack01[4];
                     }
                 }
@@ -82,17 +86,14 @@ namespace Repos.MSR100Controller
 
         private static string ParseTrack02(ref Track02Info cardinfoTrack2, string tracks1)
         {
-
                 cardinfoTrack2.Raw = tracks1;
-
                 var fieldsTrack02 = tracks1.Substring(1).Split('=');
-
                 cardinfoTrack2.PAN = fieldsTrack02[0];
                 var year = Convert.ToInt16(fieldsTrack02[1].Substring(0, 2)) + 2000;
                 var month = Convert.ToInt16(fieldsTrack02[1].Substring(2, 2));
                 cardinfoTrack2.ExpirationDate = new DateTime(year, month, 1);
                 cardinfoTrack2.ServiceCode = fieldsTrack02[1].Substring(4, 3);
-            return fieldsTrack02[1].Substring(7)
+            return fieldsTrack02[1].Substring(7);
         }
 
         public static MagneticCardInfo ParseData(string data)

@@ -80,10 +80,9 @@ namespace Repos.MSR100Controller
 
         }
 
-        private static void ParseTrack02(ref Track02Info cardinfoTrack2, string tracks1)
+        private static string ParseTrack02(ref Track02Info cardinfoTrack2, string tracks1)
         {
-            if (tracks1.Length <= 40 && tracks1.Length > 1)
-            {
+
                 cardinfoTrack2.Raw = tracks1;
 
                 var fieldsTrack02 = tracks1.Substring(1).Split('=');
@@ -92,8 +91,8 @@ namespace Repos.MSR100Controller
                 var year = Convert.ToInt16(fieldsTrack02[1].Substring(0, 2)) + 2000;
                 var month = Convert.ToInt16(fieldsTrack02[1].Substring(2, 2));
                 cardinfoTrack2.ExpirationDate = new DateTime(year, month, 1);
-                cardinfoTrack2.ServiceCode = fieldsTrack02[1].Substring(4, 3);              
-            }
+                cardinfoTrack2.ServiceCode = fieldsTrack02[1].Substring(4, 3);
+            return fieldsTrack02[1].Substring(7)
         }
 
         public static MagneticCardInfo ParseData(string data)
@@ -114,19 +113,10 @@ namespace Repos.MSR100Controller
            
                 if (tracks.Length > 1)
                 {
-                    ParseTrack02(ref cardinfo.Track2, tracks[1]);
+                   
                     if (tracks[1].Length <= 40 && tracks[1].Length > 1)
                     {
-                        cardinfo.Track2.Raw = tracks[1];
-
-                        var fieldsTrack02 = tracks[1].Substring(1).Split('=');
-
-                        cardinfo.Track2.PAN = fieldsTrack02[0];
-                        year = Convert.ToInt16(fieldsTrack02[1].Substring(0, 2)) + 2000;
-                        month = Convert.ToInt16(fieldsTrack02[1].Substring(2, 2));
-                        cardinfo.Track2.ExpirationDate = new DateTime(year, month, 1);
-                        cardinfo.Track2.ServiceCode = fieldsTrack02[1].Substring(4, 3);
-                        cardinfo.Track1.DiscretionaryData = fieldsTrack02[1].Substring(7);
+                        cardinfo.Track1.DiscretionaryData =  ParseTrack02(ref cardinfo.Track2, tracks[1]);                       
                     }
                 }
 

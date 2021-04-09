@@ -89,8 +89,8 @@ namespace Repos.MSR100Controller
                 var fieldsTrack02 = tracks1.Substring(1).Split('=');
 
                 cardinfoTrack2.PAN = fieldsTrack02[0];
-                year = Convert.ToInt16(fieldsTrack02[1].Substring(0, 2)) + 2000;
-                month = Convert.ToInt16(fieldsTrack02[1].Substring(2, 2));
+                var year = Convert.ToInt16(fieldsTrack02[1].Substring(0, 2)) + 2000;
+                var month = Convert.ToInt16(fieldsTrack02[1].Substring(2, 2));
                 cardinfoTrack2.ExpirationDate = new DateTime(year, month, 1);
                 cardinfoTrack2.ServiceCode = fieldsTrack02[1].Substring(4, 3);              
             }

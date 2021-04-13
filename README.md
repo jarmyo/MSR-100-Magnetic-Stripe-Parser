@@ -16,12 +16,12 @@ Instance a `MSR100Controller` object, attach a custom method to `OnCardSwiped` e
 
 Constructor has two parameters:
 
--  `PortName` is a **optional** string parameter that will override the port name, default is COM1
--  `baudRate` is a **optional** integer parameter that will override the baud rate, default is 9600 
+    -   `PortName` is a **optional** string parameter that will override the port name, default is COM1
+    -   `baudRate` is a **optional** integer parameter that will override the baud rate, default is 9600 
 
 Class has one public event:
 
--  `OnCardSwiped` is event that will fire every time a card is swiped on the device, return an object of type `MagneticCardInfo`
+    -   `OnCardSwiped` is event that will fire every time a card is swiped on the device, return an object of type `MagneticCardInfo`
 
 ## Use Example
 
@@ -49,8 +49,8 @@ private static void Controller_OnCardSwiped(MagneticCardInfo cardinfo)
 
 ## Contributing
 
--  **Bug Reporting**: You can contribute opening [issues](https://github.com/jarmyo/MSR-100-Magnetic-Stripe-Parser/issues).
--  **Bug Fixing**: Fix it and help others and write some [tests](https://github.com/jarmyo/MSR-100-Magnetic-Stripe-Parser/tree/main/MSR-100-Magnetic-Stripe-ParserTests) to make sure that everything are working propertly.
--  **Improving**: Open an [issue](https://github.com/jarmyo/MSR-100-Magnetic-Stripe-Parser/issues) and lets discuss it.
+    -   **Bug Reporting**: You can contribute opening [issues](https://github.com/jarmyo/MSR-100-Magnetic-Stripe-Parser/issues).
+    -   **Bug Fixing**: Fix it and help others and write some [tests](https://github.com/jarmyo/MSR-100-Magnetic-Stripe-Parser/tree/main/MSR-100-Magnetic-Stripe-ParserTests) to make sure that everything are working propertly.
+    -   **Improving**: Open an [issue](https://github.com/jarmyo/MSR-100-Magnetic-Stripe-Parser/issues) and lets discuss it.
 
 ![Reader Device](/docs/msr100B.jpg "Reader Device")

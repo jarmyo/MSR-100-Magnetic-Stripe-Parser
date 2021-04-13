@@ -7,12 +7,20 @@ namespace Repos.MSR100Controller
     public delegate void CardHandler(MagneticCardInfo cardinfo);
     public class MSR100Controller : IDisposable
     {
-        public MSR100Controller(string PortName = "COM1", int baudRate = 9600)
+        public MSR100Controller(string PortName, int baudRate)
         {
             _SerialPort = new SerialPort(PortName, baudRate);
             _SerialPort.DataReceived += DataRecived;
             _SerialPort.Open();
         }
+
+        public MSR100Controller()
+        {
+            _SerialPort = new SerialPort("COM1", 9600);
+            _SerialPort.DataReceived += DataRecived;
+            _SerialPort.Open();
+        }
+
         private readonly SerialPort _SerialPort;
         public event CardHandler OnCardSwiped;
         void DataRecived(object sender, SerialDataReceivedEventArgs e)
@@ -32,8 +40,6 @@ namespace Repos.MSR100Controller
             };
 
             var tracks = data.Split('?'); //split end sentinel
-
-           // int year, month = 0;
 
             if (tracks.Length > 0)
             {

@@ -2,6 +2,8 @@
 
 [![CodeFactor](https://www.codefactor.io/repository/github/jarmyo/msr-100-magnetic-stripe-parser/badge)](https://www.codefactor.io/repository/github/jarmyo/msr-100-magnetic-stripe-parser)
 
+[![dotnet](https://github.com/jarmyo/MSR-100-Magnetic-Stripe-Parser/actions/workflows/dotnet.yml/badge.svg)
+    
 # MSR-100-Magnetic-Stripe-Parser
 
 Autoconnect MSR-100 Magnetic Stripe Card Reader Throught RS232 Port and returns MagneticCardInfo class with data on Swipe event.

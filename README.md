@@ -2,7 +2,7 @@
 
 [![CodeFactor](https://www.codefactor.io/repository/github/jarmyo/msr-100-magnetic-stripe-parser/badge)](https://www.codefactor.io/repository/github/jarmyo/msr-100-magnetic-stripe-parser)
 
-[![dotnet](https://github.com/jarmyo/MSR-100-Magnetic-Stripe-Parser/actions/workflows/dotnet.yml/badge.svg)]
+![dotnet](https://github.com/jarmyo/MSR-100-Magnetic-Stripe-Parser/actions/workflows/dotnet.yml/badge.svg)
     
 # MSR-100-Magnetic-Stripe-Parser
 

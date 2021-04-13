@@ -14,7 +14,6 @@ namespace Repos.MSR100Controller
             if (namesplit.Length > 1)
                 cardinfoTrack1.FirstName = namesplit[1].Trim();
             cardinfoTrack1.Name = cardinfoTrack1.FirstName + " " + cardinfoTrack1.LastName;
-
         }
 
         public static DateTime ExpirationDate(string date)

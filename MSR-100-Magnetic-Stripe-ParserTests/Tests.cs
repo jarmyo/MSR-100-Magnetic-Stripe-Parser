@@ -7,7 +7,7 @@ namespace MSR_100_Magnetic_Stripe_ParserTests
         [SetUp]
         public void Setup()
         {
-            DummyTest = new System.Collections.Generic.List<string>()
+            DummyTest = new System.Collections.Generic.List<string>
             {
                 "%B4111111111111111^LAST/FIRST^15031019999900888000000?;4111111111111111=150310199999888?",
                 "%B5555555555554444^LAST/FIRST^14021019999900888000000?;5555555555554444=14021019999988800000?",
@@ -19,7 +19,7 @@ namespace MSR_100_Magnetic_Stripe_ParserTests
                 "%B5168755544412233^PKMMV/UNEMBOXXXXUNEMBOXXXXUNEMBOXXXXUNEMBOXXXXUNEMBOXXXX^1807111100000000000000111000000?;5168755544412233=18071111000011100000?"
             };
 
-            CorrectPANS = new System.Collections.Generic.List<string>()
+            CorrectPANS = new System.Collections.Generic.List<string>
             {
                 "4111111111111111",
                 "5555555555554444",
@@ -31,7 +31,7 @@ namespace MSR_100_Magnetic_Stripe_ParserTests
                 null
             };
 
-            CorrectNames = new System.Collections.Generic.List<string>()
+            CorrectNames = new System.Collections.Generic.List<string>
             {
                "FIRST LAST",
                "FIRST LAST",
@@ -43,7 +43,7 @@ namespace MSR_100_Magnetic_Stripe_ParserTests
                null
             };
 
-            CorrectDates = new System.Collections.Generic.List<System.DateTime>()
+            CorrectDates = new System.Collections.Generic.List<System.DateTime>
             { 
                 new System.DateTime(2015,3,1),
                 new System.DateTime(2014,2,1),
@@ -55,7 +55,7 @@ namespace MSR_100_Magnetic_Stripe_ParserTests
                 new System.DateTime()
             };
 
-            CorrectServices = new System.Collections.Generic.List<string>()
+            CorrectServices = new System.Collections.Generic.List<string>
             {
                 "101",
                 "019",
@@ -66,14 +66,13 @@ namespace MSR_100_Magnetic_Stripe_ParserTests
                 "356",
                 null
             };
-
         }
         
-        public System.Collections.Generic.List<string> DummyTest;
-        public System.Collections.Generic.List<string> CorrectPANS;
-        public System.Collections.Generic.List<System.DateTime> CorrectDates;
-        public System.Collections.Generic.List<string> CorrectNames;
-        public System.Collections.Generic.List<string> CorrectServices;
+        private System.Collections.Generic.List<string> DummyTest;
+        private System.Collections.Generic.List<string> CorrectPANS;
+        private System.Collections.Generic.List<System.DateTime> CorrectDates;
+        private System.Collections.Generic.List<string> CorrectNames;
+        private System.Collections.Generic.List<string> CorrectServices;
 
         [Test]
         public void CheckPAN()

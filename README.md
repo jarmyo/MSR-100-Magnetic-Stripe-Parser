@@ -23,7 +23,7 @@ Class has one public event:
 
 - `OnCardSwiped` is event that will fire every time a card is swiped on the device, return an object of type `MagneticCardInfo`
 
-#Use Example
+# Use Example
 
 ```csharp
 static void Main(string[] args)

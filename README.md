@@ -10,7 +10,7 @@ This Reader:
 
 https://en.wikipedia.org/wiki/ISO/IEC_7811
 
-# How to use
+## How to use
 
 Instance a `MSR100Controller` object, attach a custom method to `OnCardSwiped` event.
 
@@ -23,7 +23,7 @@ Class has one public event:
 
 - `OnCardSwiped` is event that will fire every time a card is swiped on the device, return an object of type `MagneticCardInfo`
 
-# Use Example
+## Use Example
 
 ```csharp
 static void Main(string[] args)
@@ -47,7 +47,7 @@ private static void Controller_OnCardSwiped(MagneticCardInfo cardinfo)
 }        
 ```
 
-# Contributing
+## Contributing
 
 - **Bug Reporting**: You can contribute opening [issues](https://github.com/jarmyo/MSR-100-Magnetic-Stripe-Parser/issues).
 - **Bug Fixing**: Fix it and help others and write some [tests](https://github.com/jarmyo/MSR-100-Magnetic-Stripe-Parser/tree/main/MSR-100-Magnetic-Stripe-ParserTests) to make sure that everything are working propertly.

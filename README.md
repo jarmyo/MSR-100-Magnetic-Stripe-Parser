@@ -25,7 +25,7 @@ Class has one public event:
 
 ## Use Example
 
-    ```csharp
+```csharp
     static void Main(string[] args)
     {
             using (var controller = new MSR100Controller())

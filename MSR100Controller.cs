@@ -13,7 +13,7 @@ namespace Repos.MSR100Controller
             _SerialPort.DataReceived += DataRecived;
             _SerialPort.Open();
         }
-        private SerialPort _SerialPort;
+        private readonly SerialPort _SerialPort;
         public event CardHandler OnCardSwiped;
         void DataRecived(object sender, SerialDataReceivedEventArgs e)
         {
@@ -37,13 +37,13 @@ namespace Repos.MSR100Controller
 
             if (tracks.Length > 0)
             {
-                TrackParsers.ParseTrack01(ref cardinfo.Track1, tracks[0]);
+                cardinfo.Track1.ParseTrack01(tracks[0]);
            
                 if (tracks.Length > 1)
                 {
                     if (tracks[1].Length <= 40 && tracks[1].Length > 1)
                     {
-                        cardinfo.Track1.DiscretionaryData = TrackParsers.ParseTrack02(ref cardinfo.Track2, tracks[1]);                       
+                        cardinfo.Track1.DiscretionaryData = cardinfo.Track2.ParseTrack02( tracks[1]);                       
                     }
                 }
             }

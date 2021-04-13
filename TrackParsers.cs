@@ -2,9 +2,9 @@
 
 namespace Repos.MSR100Controller
 {
-    public class TrackParsers
+    public static class TrackParsers
     {
-        public static void ParseTrack01(ref Track01Info cardinfoTrack1, string tracks0)
+        public static void ParseTrack01(this Track01Info cardinfoTrack1, string tracks0)
         {
             cardinfoTrack1.Raw = tracks0;
             if (tracks0.Length <= 79)
@@ -17,7 +17,7 @@ namespace Repos.MSR100Controller
             }
         }
 
-        public static string ParseTrack02(ref Track02Info cardinfoTrack2, string tracks1)
+        public static string ParseTrack02(this Track02Info cardinfoTrack2, string tracks1)
         {
             cardinfoTrack2.Raw = tracks1;
             var fieldsTrack02 = tracks1.Substring(1).Split('=');

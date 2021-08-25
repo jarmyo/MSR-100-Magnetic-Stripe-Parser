@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <PackageId>MSR-100-Magnetic-Stripe-Parser</PackageId>
     <Version>1.0.0</Version>
     <RootNamespace>MSR_100_Magnetic_Stripe_Parser</RootNamespace>

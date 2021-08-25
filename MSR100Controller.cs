@@ -1,6 +1,4 @@
-﻿using Repos.MSR100Controller;
-using System;
-using System.IO.Ports;
+﻿using System.IO.Ports;
 
 namespace Repos.MSR100Controller
 {

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Repos.MSR100Controller
+﻿namespace Repos.MSR100Controller
 {
     public static class TrackParsers
     {

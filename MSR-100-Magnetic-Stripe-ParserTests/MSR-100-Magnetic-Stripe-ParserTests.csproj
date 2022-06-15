@@ -17,5 +17,4 @@
   <ItemGroup>
     <ProjectReference Include="..\MSR-100-Magnetic-Stripe-Parser.csproj" />
   </ItemGroup>
-
 </Project>

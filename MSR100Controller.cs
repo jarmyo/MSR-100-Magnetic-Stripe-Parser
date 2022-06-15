@@ -1,5 +1,5 @@
-﻿using System.IO.Ports;
-
+﻿global using System;
+using System.IO.Ports;
 namespace Repos.MSR100Controller
 {
     public delegate void CardHandler(MagneticCardInfo cardinfo);
@@ -28,7 +28,7 @@ namespace Repos.MSR100Controller
             var cardinfo = ParseData(data);
             OnCardSwiped?.Invoke(cardinfo);
         }
-
+        
         public static MagneticCardInfo ParseData(string data)
         {
             data = data.Replace("\r", null);
@@ -53,7 +53,7 @@ namespace Repos.MSR100Controller
             }
             return cardinfo;
         }
-
+        
         public void Dispose()
         {
             GC.SuppressFinalize(this);

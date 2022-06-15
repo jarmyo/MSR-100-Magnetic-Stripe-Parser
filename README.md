@@ -14,6 +14,18 @@ This Reader:
 
 https://en.wikipedia.org/wiki/ISO/IEC_7811
 
+## Install
+
+```
+Install-Package MSR-100-Magnetic-Stripe-Parser -Version 1.0.1
+```
+
+or
+
+```
+dotnet add package MSR-100-Magnetic-Stripe-Parser --version 1.0.1
+```
+
 ## How to use
 
 Instance a `MSR100Controller` object, attach a custom method to `OnCardSwiped` event.
@@ -23,7 +35,7 @@ Constructor has two parameters:
 -   `PortName` is a **optional** string parameter that will override the port name, default is COM1
 -   `baudRate` is a **optional** integer parameter that will override the baud rate, default is 9600 
 
-Class has one public event:
+**MSR100Controller Class** has one public event:
 
 -   `OnCardSwiped` is event that will fire every time a card is swiped on the device, return an object of type `MagneticCardInfo`
 

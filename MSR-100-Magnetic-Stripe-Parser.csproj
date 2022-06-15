@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFrameworks>netstandard2.0;net5.0;net6.0</TargetFrameworks>
     <PackageId>MSR-100-Magnetic-Stripe-Parser</PackageId>
     <Version>1.0.1</Version>
     <RootNamespace>MSR_100_Magnetic_Stripe_Parser</RootNamespace>
@@ -16,6 +16,8 @@
     <None Remove="MSR-100-Magnetic-Stripe-ParserTests\**" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="System.IO.Ports" Version="6.0.0" />
+    <PackageReference Include="System.IO.Ports" Version="5.0.1" Condition="'$(TargetFramework)' == 'net5.0'" />
+    <PackageReference Include="System.IO.Ports" Version="6.0.0" Condition="'$(TargetFramework)' == 'net6.0'" />
+    <PackageReference Include="System.IO.Ports" Version="6.0.0" Condition="'$(TargetFramework)' == 'netstandard2.0'" />
   </ItemGroup>
 </Project>

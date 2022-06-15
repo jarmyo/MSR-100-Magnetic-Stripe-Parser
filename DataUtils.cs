@@ -13,7 +13,7 @@ internal static class DataUtils
             cardinfoTrack1.FirstName = namesplit[1].Trim();
         }
 
-        cardinfoTrack1.Name = cardinfoTrack1.FirstName + " " + cardinfoTrack1.LastName;
+        cardinfoTrack1.Name = $"{cardinfoTrack1.FirstName} {cardinfoTrack1.LastName}";
     }
     internal static DateTime ExpirationDate(string date)
     {

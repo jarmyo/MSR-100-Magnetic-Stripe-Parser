@@ -9,6 +9,10 @@
     <PackageProjectUrl>https://github.com/jarmyo/MSR-100-Magnetic-Stripe-Parser/</PackageProjectUrl>
     <RepositoryUrl>https://github.com/jarmyo/MSR-100-Magnetic-Stripe-Parser/</RepositoryUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <RepositoryType>git</RepositoryType>
+    <Description>Autoconnect MSR-100 Magnetic Stripe Card Reader and returns CardInfo on Swipe event.</Description>
+    <Title>MSR 100 Magnetic Stripe Parser</Title>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
   <ItemGroup>
     <Compile Remove="MSR-100-Magnetic-Stripe-ParserTests\**" />

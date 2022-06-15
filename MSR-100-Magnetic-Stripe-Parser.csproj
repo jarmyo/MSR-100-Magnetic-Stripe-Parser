@@ -1,9 +1,8 @@
-<Project Sdk="Microsoft.NET.Sdk">
-
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <PackageId>MSR-100-Magnetic-Stripe-Parser</PackageId>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <RootNamespace>MSR_100_Magnetic_Stripe_Parser</RootNamespace>
     <Authors>Julian Augusto Ruiz Martinez</Authors>
     <Company>Repos Software</Company>
@@ -11,20 +10,12 @@
     <RepositoryUrl>https://github.com/jarmyo/MSR-100-Magnetic-Stripe-Parser/</RepositoryUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
-
   <ItemGroup>
     <Compile Remove="MSR-100-Magnetic-Stripe-ParserTests\**" />
     <EmbeddedResource Remove="MSR-100-Magnetic-Stripe-ParserTests\**" />
     <None Remove="MSR-100-Magnetic-Stripe-ParserTests\**" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Compile Remove="MSR100ControllerTests.cs" />
-    <Compile Remove="UnitTest1.cs" />
-  </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="System.IO.Ports" Version="6.0.0" />
   </ItemGroup>
-
 </Project>
